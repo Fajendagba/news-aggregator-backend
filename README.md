@@ -86,7 +86,7 @@ php artisan news:fetch --category=technology --source=guardian
 ## API Endpoint Documentation:
 **Get Articles**
 ```sh
-    GET /api/v1/articles
+GET /api/v1/articles
 ```
 
 **Query Parameters:**
@@ -100,38 +100,38 @@ php artisan news:fetch --category=technology --source=guardian
 - per_page: Number of results per page (integer, default: 15)
 ```
 
+## Example Response:
 ```sh
-    ## Example Response:
-    {
-        "data": {
-            "current_page": 1,
-            "data": [
-                {
+{
+    "data": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 1,
+                "title": "Article Title",
+                "description": "Article Description",
+                "content": "Article Content",
+                "author": "John Doe",
+                "url": "https://example.com/article",
+                "image_url": "https://example.com/image.jpg",
+                "published_at": "2024-12-07T12:00:00Z",
+                "category": "technology",
+                "source": {
                     "id": 1,
-                    "title": "Article Title",
-                    "description": "Article Description",
-                    "content": "Article Content",
-                    "author": "John Doe",
-                    "url": "https://example.com/article",
-                    "image_url": "https://example.com/image.jpg",
-                    "published_at": "2024-12-07T12:00:00Z",
-                    "category": "technology",
-                    "source": {
-                        "id": 1,
-                        "name": "The Guardian",
-                        "slug": "the-guardian"
-                    }
+                    "name": "The Guardian",
+                    "slug": "the-guardian"
                 }
-                // ... more articles
-            ],
-            "meta": {
-                "available_categories": ["technology", "politics", "sports"],
-                "available_sources": [
-                    {"id": 1, "name": "The Guardian"},
-                    {"id": 2, "name": "New York Times"},
-                    {"id": 3, "name": "NewsAPI"}
-                ]
             }
+            // ... more articles
+        ],
+        "meta": {
+            "available_categories": ["technology", "politics", "sports"],
+            "available_sources": [
+                {"id": 1, "name": "The Guardian"},
+                {"id": 2, "name": "New York Times"},
+                {"id": 3, "name": "NewsAPI"}
+            ]
         }
     }
+}
 ```
